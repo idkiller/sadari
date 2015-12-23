@@ -109,22 +109,6 @@ for c in xrange(sadari_columns):
     vbars = random.sample(v, random.randint(3, 5))
     for b in vbars: sadari[c][b] = 1
     old_v = vbars
-'''
-sadari_columns = count-1
-sadari_max_rows = (game_height-3) / 2
-
-sadari = [[0 for x in range(sadari_max_rows)] for x in range(sadari_columns)]
-vbars = []
-max_vbar_count = (sadari_max_rows-2)/2
-for c in xrange(sadari_columns):
-    all_vbar = range(2, sadari_max_rows-2, 2)
-    for i in vbars: all_vbar.remove(i)
-    max_choose = len(all_vbar) - 3 if len(all_vbar)-3 > 2 else len(all_vbar)
-    choose = random.randint(3, max_choose)
-    vbars = random.sample(all_vbar, choose)
-    for r in vbars:
-        sadari[c][r] = 1
-'''
 
 odd_fix = count % 2 != 0 if player_width/2 else 0
 player_start_y = game_height - game_padding - 3
@@ -213,7 +197,6 @@ def init_sadari(choose):
     for i in range(count):
         num_txt = str(i+1)
         player_box_start_x = player_start_x + (game_padding*2 + player_width)*i - player_width/2
-        #print >> sys.stderr, "%d, %d, %d, %d" % (0, player_box_start_x, 2, player_box_start_x + player_width)
 
         columns[i] = [Box(i, game_win, 1, player_width, 0, player_box_start_x, num_txt),
                    Box(i, game_win, 1, player_width, player_start_y-1, player_box_start_x, num_txt)]
