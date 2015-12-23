@@ -199,7 +199,7 @@ def init_sadari(choose):
         player_box_start_x = player_start_x + (game_padding*2 + player_width)*i - player_width/2
 
         columns[i] = [Box(i, game_win, 1, player_width, 0, player_box_start_x, num_txt),
-                   Box(i, game_win, 1, player_width, player_start_y-1, player_box_start_x, num_txt)]
+                   Box(i, game_win, 1, player_width, player_start_y-1, player_box_start_x, n2abc(i+1))]
         game_win.vline(3, player_box_start_x + player_width/2, curses.ACS_VLINE, player_start_y-4)
 
         if i < count-1:
